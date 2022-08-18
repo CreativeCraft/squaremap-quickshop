@@ -16,7 +16,8 @@ public class QuickShopHook {
     /**
      * Retrieve the shops.
      *
-     * @return LinkedHashMap
+     * @param  world The world.
+     * @return List
      */
     public List<Shop> getShops(World world) {
         return plugin.getShop().getShopManager().getShopsInWorld(world);

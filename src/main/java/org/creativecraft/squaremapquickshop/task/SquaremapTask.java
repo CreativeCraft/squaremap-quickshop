@@ -1,6 +1,6 @@
 package org.creativecraft.squaremapquickshop.task;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.WordUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -15,7 +15,6 @@ import org.bukkit.Location;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.List;
-import java.util.Locale;
 
 public class SquaremapTask extends BukkitRunnable {
     private final SimpleLayerProvider provider;
@@ -75,7 +74,7 @@ public class SquaremapTask extends BukkitRunnable {
         ItemMeta itemMeta = shop.getItem().getItemMeta();
         String itemName = itemMeta != null && itemMeta.hasDisplayName() ?
             ChatColor.stripColor(itemMeta.getDisplayName()) :
-            StringUtils.capitalize(
+            WordUtils.capitalize(
                 shop.getItem().getType().name().toLowerCase().replace("_", " ")
             );
 
@@ -84,7 +83,7 @@ public class SquaremapTask extends BukkitRunnable {
             .clickTooltip(
                 plugin.getSettings().getConfig().getString("settings.tooltip.quickshop")
                     .replace("{owner}", shop.ownerName())
-                    .replace("{type}", StringUtils.capitalize(shop.getShopType().name().toLowerCase()))
+                    .replace("{type}", WordUtils.capitalize(shop.getShopType().name().toLowerCase()))
                     .replace("{item}", itemName)
                     .replace("{price}", Double.toString(shop.getPrice()))
                     .replace("{stock}", Integer.toString(shop.getRemainingStock()))

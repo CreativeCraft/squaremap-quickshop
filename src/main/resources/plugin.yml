@@ -1,0 +1,7 @@
+name: squaremap-quickshop
+version: "${version}"
+description: "A squaremap implementation for QuickShop."
+authors: [Log1x]
+main: org.creativecraft.squaremapquickshop.SquaremapQuickShop
+api-version: "1.18"
+depend: [QuickShop, squaremap]
